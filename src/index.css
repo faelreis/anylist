@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,12 @@ body {
   color: #404040;
 }
 
+@media(max-width:700px) {
+  body{
+    justify-content: center;
+    margin-left: -30px;
+  }
+}
 
 *{
   padding: 0;
@@ -22,5 +28,6 @@ body {
   background-color: transparent;
   outline: none;
   list-style-type: none;
+  font-family: 'Space Grotesk', sans-serif;
 }
 

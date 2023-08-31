@@ -47,7 +47,7 @@ export function Main(){
             onChange={handleInputChange}
             placeholder="Digite uma tarefa"
             />
-            <button className='btn-add' onClick={addTask}>Adicionar Tarefa</button>
+            <button className='btn-add' onClick={addTask}>+</button>
         </div>
         
         <TaskList tasks={tasks} onDelete={deleteTask} onEdit={editTask} />

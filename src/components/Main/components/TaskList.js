@@ -1,8 +1,9 @@
 import { Task } from "./Task";
+import './TaskList.css'
 
 export function TaskList({ tasks, onDelete, onEdit }) {
     return (
-      <ul>
+      <ul className='wrapper-list'>
         {tasks.map(task => (
           <Task
             key={task.id}

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import './Task.css'
+import { FaEdit, FaTrash, FaSave, FaTimesCircle} from 'react-icons/fa';
 
 export function Task({ task, onDelete, onEdit }) {
     const [editing, setEditing] = useState(false);
@@ -19,22 +21,27 @@ export function Task({ task, onDelete, onEdit }) {
     };
   
     return (
-      <li>
+      <li className='wrapper-task'>
         {editing ? (
           <>
             <input
+              className='task-text'
               type="text"
               value={editedText}
               onChange={(e) => setEditedText(e.target.value)}
             />
-            <button onClick={handleSaveClick}>Salvar</button>
-            <button onClick={handleCancelClick}>Cancelar</button>
+            <div className='wrapper-methods'>
+                <button onClick={handleSaveClick}><FaSave /></button>
+                <button onClick={handleCancelClick}><FaTimesCircle /></button>
+            </div>
           </>
         ) : (
           <>
-            {task.text}
-            <button onClick={handleEditClick}>Editar</button>
-            <button onClick={() => onDelete(task.id)}>Excluir</button>
+            <p className='task-text'>{task.text}</p>
+            <div className='wrapper-methods'>
+                <button onClick={handleEditClick}><FaEdit /></button>
+                <button onClick={() => onDelete(task.id)}><FaTrash /></button>
+            </div>
           </>
         )}
       </li>
